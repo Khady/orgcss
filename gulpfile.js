@@ -13,6 +13,7 @@ const server = require('browser-sync').create();
 $.task('build', $.series(clean, $.parallel(pages, styles, misc)));
 $.task('default', $.series('build', $.parallel(serve, watch)));
 $.task('publish', publish);
+$.task('styles', styles);
 
 function clean() {
   return del(['build']);
